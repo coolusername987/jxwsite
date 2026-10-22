@@ -8,6 +8,9 @@ thank-you.html                   fallback success page when JavaScript is off
 images/jian-xing-wu.jpg          headshot used in the About section
 netlify/functions/home-value.js  server-side RentCast valuation lookup
 netlify.toml                     publish dir, functions dir, security headers
+<city>/index.html                8 city landing pages (generated)
+scripts/build-city-pages.py      generator for the city pages + sitemap.xml
+sitemap.xml, robots.txt          for search engines
 ```
 
 ## 1. Deploy to Netlify
@@ -78,7 +81,7 @@ Search the project for `[` to find them:
 | `[PHONE]` | `index.html` (contact, success message, footer, JSON-LD) and `thank-you.html`. `tel:[PHONE]` links work with formats like `+1-626-555-0123`. |
 | `[EMAIL]` | `index.html` (contact, footer, JSON-LD) and `thank-you.html` |
 | `[OFFICE ADDRESS]` | `index.html` (contact, footer, JSON-LD) |
-| `[SITE URL]` | `index.html` `<head>`: canonical, `og:url`, JSON-LD `url`/`image`. Use the live domain without a trailing slash. |
+| `[SITE URL]` | `index.html` `<head>`: canonical, `og:url`, JSON-LD `url`/`image`. Also `SITE_URL` in `scripts/build-city-pages.py` (then re-run it), plus `sitemap.xml` and `robots.txt`. Use the live domain without a trailing slash. |
 | `[Languages placeholder]` | About section. Also update `knowsLanguage` in the JSON-LD. |
 | `[Address], [City]`, `[Price] · [Beds]…` | The 3 "Sample listing" cards in Buy. Replace them with real listings (with the seller's/listing agent's permission) or keep them clearly labeled as samples. |
 | `<!-- IDX search embed goes here -->` | Buy section. Paste your IDX vendor's embed code there. **Also add the vendor's domains to the `Content-Security-Policy` in `netlify.toml`** (`script-src`, `frame-src`, `img-src`, `connect-src`), or the browser will block the embed. |
@@ -101,7 +104,35 @@ Search the project for `[` to find them:
 
 Zillow, Redfin and Realtor.com are only linked to, never scraped. None of them offer a public valuation API.
 
-## 6. Compliance notes
+## 6. City pages (local SEO)
+
+Each community has its own page, e.g. `/diamond-bar/`, `/walnut/`, `/el-monte/`.
+These are real, indexable pages with local content. They are not redirects, because pages that rank and then bounce visitors elsewhere violate Google's spam policies.
+
+Each page includes:
+- a "{City} real estate" title, a meta description, a canonical URL and structured data (RealEstateAgent + breadcrumbs)
+- a home value search: the address is passed to the main page, which opens step 2 with the address filled in
+- a contact button: the main page's form opens with the area (and "Sell", where relevant) pre-filled
+
+Submissions from these pages are tagged in `lead_source`:
+- `city-walnut`: from the contact button
+- `city-walnut:home-value`: from the home value search
+
+**Edit the pages through the generator**, not the HTML. Change `CITIES` in `scripts/build-city-pages.py`, then run:
+
+```
+python3 scripts/build-city-pages.py
+```
+
+This rewrites every `/<city>/index.html` and `sitemap.xml`. Netlify doesn't run the generator, so commit the output.
+
+**Before launch:**
+- Read each city's facts and copy (county, school districts, freeways, landmarks) and correct anything that's wrong.
+- Add your own local knowledge. Unique, specific content is what makes these pages rank.
+- Replace `[SITE URL]` in the script, `sitemap.xml` and `robots.txt`, then submit `sitemap.xml` in Google Search Console.
+- Set up a Google Business Profile. It matters as much as the site for "real estate near me" searches.
+
+## 7. Compliance notes
 
 - The testimonials section shows "Client review coming soon." Add real reviews only, with each client's permission.
 - Don't add "top producer", rankings, award or experience claims.

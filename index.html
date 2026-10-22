@@ -461,6 +461,10 @@
     .tile-name { display: block; margin-top: 16px; font-family: var(--serif); font-size: clamp(1.3rem, 4.5vw, 1.6rem); line-height: 1.1; }
     .tile-cta { display: inline-block; margin-top: 6px; font-size: .8125rem; color: var(--muted); border-bottom: 1px solid transparent; }
     .tile:hover .tile-cta { color: var(--ink); border-bottom-color: var(--ink); }
+    .tile-guide { display: inline-block; margin-top: 10px; font-size: .875rem; font-weight: 500; text-underline-offset: 4px; }
+    .footer-areas { display: flex; flex-wrap: wrap; gap: 6px 18px; list-style: none; margin: 6px 0 24px; }
+    .footer-areas a { color: var(--ink); text-decoration: none; }
+    .footer-areas a:hover { text-decoration: underline; }
 
     /* Recent deals */
     .deals { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
@@ -760,36 +764,44 @@
         <ul class="tiles">
           <li class="reveal"><button class="tile" type="button" data-lead-source="community-tile" data-lead-area="Diamond Bar">
             <span class="card-media"><img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1600&q=80" alt="White modern home with a rooftop terrace beside a swimming pool" width="1600" height="1067" loading="lazy"></span>
-            <span class="tile-name">Diamond Bar</span><span class="tile-cta">Explore this area →</span>
-          </button></li>
+            <span class="tile-name">Diamond Bar</span><span class="tile-cta">Ask about this area →</span>
+          </button>
+          <a class="tile-guide" href="/diamond-bar/">Diamond Bar area guide</a></li>
           <li class="reveal"><button class="tile" type="button" data-lead-source="community-tile" data-lead-area="Walnut">
             <span class="card-media"><img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=1600&q=80" alt="Modern home with a wood-clad upper story, large windows, and a front lawn" width="1600" height="1067" loading="lazy"></span>
-            <span class="tile-name">Walnut</span><span class="tile-cta">Explore this area →</span>
-          </button></li>
+            <span class="tile-name">Walnut</span><span class="tile-cta">Ask about this area →</span>
+          </button>
+          <a class="tile-guide" href="/walnut/">Walnut area guide</a></li>
           <li class="reveal"><button class="tile" type="button" data-lead-source="community-tile" data-lead-area="Rowland Heights">
             <span class="card-media"><img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1600&q=80" alt="Two-story modern home with timber and dark cladding and a glass upper level" width="1600" height="1067" loading="lazy"></span>
-            <span class="tile-name">Rowland Heights</span><span class="tile-cta">Explore this area →</span>
-          </button></li>
+            <span class="tile-name">Rowland Heights</span><span class="tile-cta">Ask about this area →</span>
+          </button>
+          <a class="tile-guide" href="/rowland-heights/">Rowland Heights area guide</a></li>
           <li class="reveal"><button class="tile" type="button" data-lead-source="community-tile" data-lead-area="Hacienda Heights">
             <span class="card-media"><img src="https://images.unsplash.com/photo-1600563438938-a9a27216b4f5?w=1600&q=80" alt="Modern gabled home behind a dark slatted fence under a clear blue sky" width="1600" height="1067" loading="lazy"></span>
-            <span class="tile-name">Hacienda Heights</span><span class="tile-cta">Explore this area →</span>
-          </button></li>
+            <span class="tile-name">Hacienda Heights</span><span class="tile-cta">Ask about this area →</span>
+          </button>
+          <a class="tile-guide" href="/hacienda-heights/">Hacienda Heights area guide</a></li>
           <li class="reveal"><button class="tile" type="button" data-lead-source="community-tile" data-lead-area="Pomona">
             <span class="card-media"><img src="https://images.unsplash.com/photo-1523217582562-09d0def993a6?w=1600&q=80" alt="Minimal white stucco home with stacked geometric forms" width="1600" height="1067" loading="lazy"></span>
-            <span class="tile-name">Pomona</span><span class="tile-cta">Explore this area →</span>
-          </button></li>
+            <span class="tile-name">Pomona</span><span class="tile-cta">Ask about this area →</span>
+          </button>
+          <a class="tile-guide" href="/pomona/">Pomona area guide</a></li>
           <li class="reveal"><button class="tile" type="button" data-lead-source="community-tile" data-lead-area="Chino Hills">
             <span class="card-media"><img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1600&q=80" alt="Single-story modern home with glass walls opening onto a pool deck" width="1600" height="1067" loading="lazy"></span>
-            <span class="tile-name">Chino Hills</span><span class="tile-cta">Explore this area →</span>
-          </button></li>
+            <span class="tile-name">Chino Hills</span><span class="tile-cta">Ask about this area →</span>
+          </button>
+          <a class="tile-guide" href="/chino-hills/">Chino Hills area guide</a></li>
           <li class="reveal"><button class="tile" type="button" data-lead-source="community-tile" data-lead-area="West Covina">
             <span class="card-media"><img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1600&q=80" alt="White two-story home with a wraparound balcony and a pool framed by palm trees" width="1600" height="1067" loading="lazy"></span>
-            <span class="tile-name">West Covina</span><span class="tile-cta">Explore this area →</span>
-          </button></li>
+            <span class="tile-name">West Covina</span><span class="tile-cta">Ask about this area →</span>
+          </button>
+          <a class="tile-guide" href="/west-covina/">West Covina area guide</a></li>
           <li class="reveal"><button class="tile" type="button" data-lead-source="community-tile" data-lead-area="El Monte">
             <span class="card-media"><img src="https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=1600&q=80" alt="Interior with a floating staircase and a glass wall looking out to a pool" width="1600" height="1067" loading="lazy"></span>
-            <span class="tile-name">El Monte</span><span class="tile-cta">Explore this area →</span>
-          </button></li>
+            <span class="tile-name">El Monte</span><span class="tile-cta">Ask about this area →</span>
+          </button>
+          <a class="tile-guide" href="/el-monte/">El Monte area guide</a></li>
         </ul>
       </div>
     </section>
@@ -1058,6 +1070,17 @@
           <p><a href="tel:[PHONE]">[PHONE]</a> · <a href="mailto:[EMAIL]">[EMAIL]</a></p>
         </div>
       </div>
+      <p class="eyebrow" style="margin-bottom:4px">Areas</p>
+      <ul class="footer-areas">
+          <li><a href="/diamond-bar/">Diamond Bar</a></li>
+          <li><a href="/walnut/">Walnut</a></li>
+          <li><a href="/rowland-heights/">Rowland Heights</a></li>
+          <li><a href="/hacienda-heights/">Hacienda Heights</a></li>
+          <li><a href="/pomona/">Pomona</a></li>
+          <li><a href="/chino-hills/">Chino Hills</a></li>
+          <li><a href="/west-covina/">West Covina</a></li>
+          <li><a href="/el-monte/">El Monte</a></li>
+      </ul>
       <div class="footer-legal">
         <p class="eho">
           <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M3 11 12 4l9 7M5 10v10h14V10M9 13h6M9 16h6"/></svg>
@@ -1579,6 +1602,24 @@
         '&libraries=places&loading=async&callback=__initPlaces';
       script.async = true;
       document.head.appendChild(script);
+    }
+
+    /* ---------- Hand-off from the city pages (/diamond-bar/ etc.) ----------
+       ?address=…&src=city-walnut  → pre-fill the home value search and open step 2
+       ?area=…&intent=Sell&src=…   → pre-fill the contact form */
+    var incoming = new URLSearchParams(window.location.search);
+    var inSource = (incoming.get('src') || '').replace(/[^a-z0-9:_-]/gi, '').slice(0, 60);
+    var inAddress = (incoming.get('address') || '').trim().replace(/\s+/g, ' ').slice(0, 200);
+    var inArea = (incoming.get('area') || '').trim().slice(0, 60);
+    var inIntent = incoming.get('intent') || '';
+    if (inAddress) {
+      hvAddress.value = inAddress;
+      setHidden(hvForm, 'lead_source', inSource ? inSource + ':home-value' : hvForm.dataset.defaultSource);
+      window.scrollTo(0, 0);
+      if (checkField(hvAddress)) hvAddress.focus();
+      else openStep2();
+    } else if (inArea || inIntent) {
+      goToLead({ area: inArea, intent: inIntent, source: inSource || 'url-params' });
     }
   })();
   </script>
