@@ -1,0 +1,39 @@
+[build]
+  publish = "."
+  # Optional: if GOOGLE_MAPS_API_KEY is set in Netlify, swap it into index.html at build time.
+  # Without it, the address box stays a plain text input.
+  command = '''if [ -n "$GOOGLE_MAPS_API_KEY" ]; then sed -i "s|__GOOGLE_MAPS_API_KEY__|$GOOGLE_MAPS_API_KEY|g" index.html; fi'''
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+# Don't serve repo files that aren't part of the site.
+[[redirects]]
+  from = "/netlify/*"
+  to = "/404"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/README.md"
+  to = "/404"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/netlify.toml"
+  to = "/404"
+  status = 404
+  force = true
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+    # If you add an IDX embed, add its script/frame/image domains here (see README).
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://maps.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://images.unsplash.com https://maps.gstatic.com https://maps.googleapis.com; connect-src 'self' https://maps.googleapis.com https://places.googleapis.com; frame-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'"
