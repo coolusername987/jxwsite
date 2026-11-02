@@ -1,0 +1,76 @@
+{
+  "_readme": "Single source of truth for business details. Run `python3 scripts/build.py` after editing (Netlify does this on every deploy). Empty strings/lists are omitted from the site and structured data rather than shown as placeholders.",
+
+  "siteUrl": "",
+  "_siteUrl": "Production domain, e.g. https://www.example.com (no trailing slash). Leave empty to use the SITE_URL environment variable, then Netlify's URL variable (your primary domain). Set this or SITE_URL once a custom domain is live.",
+
+  "businessName": "Jian-Xing Wu, REALTOR®",
+  "agentName": "Jian-Xing Wu",
+  "agentShortName": "Jian",
+  "jobTitle": "REALTOR® | Buyer's Agent",
+  "description": "Jian-Xing Wu is a REALTOR® with Pinnacle Real Estate Group helping first-time buyers, families, and home sellers in the San Gabriel Valley and Inland Empire, including Diamond Bar, Walnut, Rowland Heights, Hacienda Heights, Pomona, Chino Hills, West Covina, and El Monte.",
+
+  "phone": {
+    "display": "(626) 465-8068",
+    "e164": "+16264658068"
+  },
+  "email": "",
+  "_email": "Business email, e.g. jian@example.com. Shown in the contact section, footer and structured data once set.",
+
+  "address": {
+    "streetAddress": "",
+    "addressLocality": "",
+    "addressRegion": "CA",
+    "postalCode": "",
+    "addressCountry": "US"
+  },
+  "_address": "Office street address, city and ZIP. Only CA/US are filled in; nothing is shown on the site until streetAddress is set.",
+
+  "license": {
+    "agent": "02236314",
+    "broker": "01918023",
+    "brokerage": "Pinnacle Real Estate Group",
+    "brokerageLegalName": "Navigators Real Estate, Inc."
+  },
+
+  "serviceArea": {
+    "regions": ["San Gabriel Valley", "Inland Empire"],
+    "cities": [
+      "Diamond Bar",
+      "Walnut",
+      "Rowland Heights",
+      "Hacienda Heights",
+      "Pomona",
+      "Chino Hills",
+      "West Covina",
+      "El Monte"
+    ]
+  },
+
+  "services": [
+    {
+      "name": "Home buyer representation",
+      "description": "Guidance for first-time buyers and families from pre-approval through closing, with comparable-sales data for every offer."
+    },
+    {
+      "name": "Home seller representation",
+      "description": "Pricing, preparation, and marketing guidance for homeowners selling in the San Gabriel Valley and Inland Empire."
+    },
+    {
+      "name": "Free home value estimate and market analysis",
+      "description": "An instant automated estimate, followed by a free, more detailed comparative market analysis from Jian."
+    }
+  ],
+
+  "languages": [],
+  "_languages": "Languages spoken, e.g. [\"English\", \"Mandarin\"]. Shown in About and structured data once set.",
+
+  "hours": [],
+  "_hours": "Opening hours in schema.org format, e.g. [{\"days\": [\"Monday\",\"Tuesday\",\"Wednesday\",\"Thursday\",\"Friday\"], \"opens\": \"09:00\", \"closes\": \"18:00\"}]. Leave empty to omit.",
+
+  "social": [],
+  "_social": "Full profile URLs (Instagram, Facebook, LinkedIn, Zillow agent profile...). Used for footer links and schema sameAs.",
+
+  "privacyContact": "",
+  "_privacyContact": "Email or address for privacy requests on /privacy/. Falls back to the phone number when empty."
+}
